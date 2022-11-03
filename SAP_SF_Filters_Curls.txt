@@ -1,0 +1,195 @@
+ACCOUNT_Filters:
+
+
+QUERY_FIlters_True:  curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=True&_pageSize=10"
+ALL_IDS:             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryId=query-all-ids
+Id_filter :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=_id%20eq%20%22vijay%22" 
+username  :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SF31OCTDYNAMIC/__ACCOUNT__?_queryFilter=username%20eq%20%22karthimmm%22"
+Lastname :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=lastName%20eq%20%22john%22"
+Enable :             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=__ENABLE__%20eq%20%22True%22&_pageSize=10"
+contains :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=username%20co%20%22ad%22"
+starts_with  :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=username%20sw%20%22sf%22"
+ends_with    :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=username%20ew%20%22in%22"
+complex_expression : curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=lastName%20ew%20%22hn%22%20or%20firstName%20sw%20%22ve%22%20and%20%21%28department%20eq%20%22testing%22%29"
+Greater_orequalto:   curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=firstName%20ge%20%22venkatbctaw%22"
+Greaterthan    :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=firstName%20gt%20%22venkatpehrg%22"    
+lessthan :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=firstName%20lt%20%22venkatnnohp%22&_pageSize=10"
+lessthan_or_equalto: curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=firstName%20le%20%22venkatybekk%22&_pageSize=10"
+Non_existing_id :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=_id%20eq%20%222rvJKAAY%22"
+And             :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=username%20eq%20%22vijay%22%20and%20%21%28department%20eq%20%22testing%22%29"
+or              :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__ACCOUNT__?_queryFilter=username%20eq%20%22vijay%22%20or%20department%20eq%20%22testing%22"
+
+                                                                                                                                                                                                                          username%20eq%20%22vijay%22%20or%20departmen%20eq%20%22testing%22
+
+
+
+
+
+
+
+curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --header "If-Match: *" --header "Content-Type: application/json" --request  PUT --data '{"userId": "cafuk", "username": "HTFONSFTEST", "__ENABLE__": true, "email": "bkabsvmwSFTEST@foo.bar", "firstName": "bkabsvmw", "lastName": "SFTEST", "country": "USA", "married": false, "timeZone": "US/Pacific", "department": "Cloud", "state": "New York", "city": "New York City", "jobLevel": "2", "location": "40.6635\u00b0N 73.9387\u00b0W", "__PASSWORD__": "Test@123", "citizenship": "US", "EmpEmployment": {"eligibleForStock": false, "initialOptionGrant": "14.8", "initialStockGrant": "123"}, "EmpJob": {"startDate": "2021-07-27 00:00:00", "eventReason": "HIRNEW", "company": "1710", "businessUnit": "PRODS", "jobTitle": "Developer", "jobCode": "50070999", "timezone": "America/Chicago", "location": "1710-2004", "position": "50014339", "payScaleType": "USA/US1", "payScaleArea": "USA/US1", "seqNumber": "5", "managerId": "NO_MANAGER", "payGrade": "GR-11"}, "__GROUP__": [{"groupId": "6895"}, {"groupId": "6095"}, {"groupId": "6877"}], "PerPerson": {"dateOfBirth": "2012-08-22 00:00:00", "countryOfBirth": "USA", "regionOfBirth": "Canada"}, "PerPersonal": {"gender": "M", "endDate": "2021-06-24 00:00:00", "startDate": "2010-07-22 00:00:00", "firstName": "phoenidec", "lastName": "karan", "nativePreferredLang": "English (US)", "salutation": "Mr.", "maritalStatus": "Divorced", "nationality": "USA", "middleName": "j", "preferredName": "Kabe Roshi"}}' "http://localhost:8080/openidm/system/successfactors/__ACCOUNT__/cafuk"
+
+
+Delete:
+
+curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --header "If-Match: *" --request  DELETE "http://localhost:8080/openidm/system/SF31OCTDYNAMIC/__ACCOUNT__/karthimmm"
+
+
+
+Deassign:
+ curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --header "If-Match: *" --header "Content-Type: application/json" --request  PUT --data '{"__GROUP__": []}' "http://localhost:8080/openidm/system/DynamicSF2/__ACCOUNT__/ananthrajmm"
+
+Assignment:
+curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --header "If-Match: *" --header "Content-Type: application/json" --request  PUT --data '{"__GROUP__": [{"groupId":"1586","groupName":"$$EVERYONE$$"},{"groupId":"6895","groupName":"Never have i error"}]}' "http://localhost:8080/openidm/system/DynamicSF2/__ACCOUNT__/ananthrajmm"
+
+
+
+
+
+
+Person:
+
+QUERY_FIlters_True:  curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=True"
+ALL_IDS:             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryId=query-all-ids
+Id_filter :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=_id%20eq%20%22sfadmin%22"
+
+startdate  :         curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=PerPersonal_nationality%20eq%20%22USA%22"
+
+contains :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20co%20%22sfad%22"
+starts_with  :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20sw%20%22sfa%22"
+ends_with    :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20ew%20%22in%22"
+complex_expression : curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20ew%20%22in%22%20or%20__NAME__%20eq%20%22sfadmin%22%20and%20%21%28PerPersonal_nationality%20eq%20%22USA22%29"
+                      curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=PerPersonal_lastName%20ew%20%22hn%22%20or%20PerPersonal_firstName%20sw%20%22ve%22%20and%20%21%28PerPersonal_nationality%20eq%20%22USA%22%29" 
+
+ curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=_id%20eq%20%22sfadmin%22%20or%20__NAME__%20eq%20%22sfadmin%22%20and%20%21%28PerPersonal_nationality%20eq%20%22USA22%29"
+
+Greater_orequalto:   curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20ge%20%22sfadmin%22"
+Greaterthan    :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20gt%20%22sfadmin%22"
+lessthan :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20lt%20%22sfadmin%22"
+lessthan_or_equalto: curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20le%20%22sfadmin%22"
+Non_existing_id :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=_id%20eq%20%222rvJKAAY%22"
+
+And             :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20eq%20%22sfadmin%22%20and%20%21%28PerPersonal_nationality%20eq%20%22IDN%22%29"
+or              :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SAPSF27OCT/__PERSON__?_queryFilter=__NAME__%20eq%20%22sfadmin%22%20or%20PerPersonal_nationality%20eq%20%22USA%22"
+
+
+
+
+Group:
+
+QUERY_FIlters_True:  curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=True"
+ALL_IDS:             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryId=query-all-ids
+Id_filter :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=_id%20eq%20%22ananthmm%22"
+createdBy:           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20eq%20%22Umesh%22"
+groupId :            curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=groupID%20eq%20%226637%22"
+contains :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20co%20%22Um%22"
+starts_with  :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20sw%20%22Um%22"
+ends_with    :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20ew%20%22sh%22"
+complex_expression : curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20ew%20%22sh%22%20or%20createdBy%20sw%20%22Um%22%20and%20%21%28__NAME__%20eq%20%223850%22%29"
+Greater_orequalto:   curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=groupName%20ge%20%22Employee%20India%22"
+Greaterthan    :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=groupName%20gt%20%22Employee%20India%22"
+lessthan :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=__NAME__%20lt%20%226637%22"
+lessthan_or_equalto: curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=__NAME__%20le%20%226637%22"
+Non_existing_id :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=_id%20eq%20%225762347%22"
+And             :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20eq%20%22Umesh%22%20and%20%21%28groupID%20eq%20%226637%22%29"
+or              :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20eq%20%22Umesh%22%20or%20groupID%20eq%20%226637%22"
+
+
+
+Emp_Job:
+
+QUERY_FIlters_True:  curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=True"
+ALL_IDS:             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryId=query-all-ids
+Id_filter :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=_id%20eq%20%22sdavid%22"
+startdate  :         curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=startDate%20eq%20%222016-01-01%2000%3A00%3A00%22"
+__NAME__Filter :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20eq%20%22sdavid%22"
+contains :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=startDate%20co%20%222016%22"
+starts_with  :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20sw%20%22sd%22"
+ends_with    :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20ew%20%22id%22"
+complex_expression : curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20ew%20%22id%22%20or%20__NAME__%20sw%20%22sd%22%20and%20%21%28startDate%20eq%20%222010-01-01%2000%3A00%3A00%22%29"
+Greater_orequalto:   curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20ge%20%22sdavid%22"
+Greaterthan    :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20gt%20%22sdavid%22"
+lessthan :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20lt%20%22sdavid%22"
+lessthan_or_equalto: curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=__NAME__%20le%20%22sdavid%22"
+Non_existing_id :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__EMPJOB__?_queryFilter=_id%20eq%20%222rvJKAAY%22"
+
+
+Group:
+
+QUERY_FIlters_True:  curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=True"
+ALL_IDS:             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryId=query-all-ids
+Id_filter :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=_id%20eq%20%226637%22"
+createdBy:           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20eq%20%22Umesh%22"
+groupId :            curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=groupID%20eq%20%226637%22"
+contains :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20co%20%22Um%22"
+starts_with  :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20sw%20%22Um%22"
+ends_with    :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20ew%20%22sh%22"
+complex_expression : curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20ew%20%22sh%22%20or%20createdBy%20sw%20%22Um%22%20and%20%21%28__NAME__%20eq%20%223850%22%29"
+Greater_orequalto:   curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=groupName%20ge%20%22Employee%20India%22"
+Greaterthan    :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=groupName%20gt%20%22Employee%20India%22"
+lessthan :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=__NAME__%20lt%20%226637%22"
+lessthan_or_equalto: curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=__NAME__%20le%20%226637%22"
+Non_existing_id :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=_id%20eq%20%225762347%22"
+And             :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20eq%20%22Umesh%22%20and%20%21%28groupID%20eq%20%226637%22%29"
+or              :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/SuccessfactorsNewObject/__GROUP__?_queryFilter=createdBy%20eq%20%22Umesh%22%20or%20groupID%20eq%20%226637%22"
+
+
+
+Perperson:
+
+QUERY_FIlters_True:  curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=True"
+ALL_IDS:             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryId=query-all-ids
+Id_filter :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=_id%20eq%20%22sfadmin%22"
+__NAME__:            curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=__NAME__%20eq%20%22sfadmin%22"
+personIdExternal :   curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=personIdExternal%20eq%20%22sfadmin%22"
+contains :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=personIdExternal%20co%20%22sfa%22"
+starts_with  :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=personIdExternal%20sw%20%22sf%22"
+ends_with    :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=personIdExternal%20ew%20%22in%22"
+complex_expression : curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=__NAME__%20ew%20%22in%22%20or%20__NAME__%20sw%20%22sf%22%20and%20%21%28personIdExternal%20eq%20%22sfadmin%22%29"
+Greater_orequalto:   	curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=__NAME__%20ge%20%22sfadmin%22"
+Greaterthan    :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=__NAME__%20gt%20%22sfadmin%22"
+lessthan :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=__NAME__%20lt%20%22sfadmin%22"
+lessthan_or_equalto: curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=__NAME__%20le%20%22sfadmin%22"
+Non_existing_id :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSON__?_queryFilter=_id%20eq%20%222rvJKAAY%22"
+
+
+
+PERPERSONAL:
+
+QUERY_FIlters_True:  curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=True"
+ALL_IDS:             curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryId=query-all-ids
+Id_filter :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=_id%20eq%20%22sfadmin%22"
+firstname :          curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=firstName%20eq%20%22Aanya%22"
+Gender:   	     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=gender%20eq%20%22F%22"
+lastname :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=lastName%20eq%20%22Singh%22"
+contains :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=firstName%20co%20%22No%22"
+starts_with  :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=lastName%20sw%20%22Si%22"
+ends_with    :       curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=firstName%20ew%20%22ya%22"
+complex_expression : curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=lastName%20ew%20%22gh%22%20or%20firstName%20sw%20%22Aa%22%20and%20%21%28__NAME__%20eq%20%22Alex%22%29"
+Greater_orequalto:   curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=__NAME__%20ge%20%22sfadmin%22"
+Greaterthan    :     curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=__NAME__%20gt%20%22sfadmin%22"
+lessthan :           curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=__NAME__%20lt%20%22sfadmin%22"
+lessthan_or_equalto: curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=__NAME__%20le%20%22sfadmin%22"
+Non_existing_id :    curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET "http://localhost:8080/openidm/system/successfactors/__PERPERSONAL__?_queryFilter=_id%20eq%20%222rvJKAAY%22"
+
+
+
+
+
+
+
+
+
+
+
+curl --header "X-OpenIDM-Username: openidm-admin" --header "X-OpenIDM-Password: openidm-admin" --request  GET http://localhost:8080/openidm/system/SAPSF27OCT/__ACCOUNT__?_queryFilter=true&_pageSize=3&_prettyprint=true
+
+
+
+
+
+
+
+
+
+.
